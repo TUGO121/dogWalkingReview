@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Places extends Model
 {
     use HasFactory;
+    public function review()   
+{
+    return $this->hasMany(Review::class);  
+}
 }
