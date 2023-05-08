@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,8 @@ use App\Http\Controllers\ReviewController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', [ReviewController::class, 'toppage']);
+// ReviewController
+Route::get('/', [ReviewController::class, 'top']);
 
-// Route::get('/', function() {
-//     return view('reviews/toppage');
-// });
+// CategoryController
+Route::get('/categories/{category}', [CategoryController::class,'top']);
