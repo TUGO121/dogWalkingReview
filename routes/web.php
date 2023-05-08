@@ -20,3 +20,9 @@ Route::get('/', [ReviewController::class, 'top']);
 
 // CategoryController
 Route::get('/categories/{category}', [CategoryController::class,'top']);
+
+// レビュー表示
+Route::get('/reviews/{review}', [ReviewController::class ,'post']);
+
+// レビュー作成画面
+// Route::get('/reviews/post', [PostController::class, 'post']);

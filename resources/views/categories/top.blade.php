@@ -40,6 +40,9 @@
             </div>
         </div>
        
+        <h2 class='place'>
+            <a href="/reviews/{{ $review->id }}">{{ $review->place }}</a>
+        </h2>
         
         <!--あいさつ文-->
         <p>皆さんはじめまして！！サイト作成者の○○です＾＾<br>

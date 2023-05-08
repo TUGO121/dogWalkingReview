@@ -14,7 +14,14 @@ class ReviewController extends Controller
             [
                 'reviews' => $review->getByLimit(),
                 'categories' => $category->getByLimit()
+                
             ]);
+    }
+    
+    public function post(Review $review)
+    {   
+        return view('reviews/post')->with(['review' => $review]);
+     
     }
 
 

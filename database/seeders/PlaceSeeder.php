@@ -31,6 +31,13 @@ class PlaceSeeder extends Seeder
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
+            [
+            'id' => 3,
+                'name' => '○○',
+                'address' => '東京都○○市',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+            ],
         ]);
                
     }
