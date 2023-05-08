@@ -14,6 +14,16 @@
         <!--タイトル-->
         <hi>Let's Dogwalking!!</hi>
         
+         <!--カテゴリー-->
+        < <a href="/">Home</a> 
+         <div class='category'>
+            @foreach ($categories as $category)
+                     <a href="/categories/{{$category->id}}">{{ $category->name }}</a>
+                </div>
+            @endforeach
+            </div>
+        </div>
+        
         <!--写真-->
         
         <!--投稿一覧-->
@@ -29,8 +39,7 @@
             @endforeach
             </div>
         </div>
-        <!--カテゴリー-->
-        <h2></h2>
+       
         
         <!--あいさつ文-->
         <p>皆さんはじめまして！！サイト作成者の○○です＾＾<br>

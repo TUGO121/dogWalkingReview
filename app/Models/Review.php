@@ -14,4 +14,9 @@ class Review extends Model
     {
         return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
     }
+    
+    public function category()   
+    {
+        return $this->belongsTo(Category::class);  
+    }
 }
