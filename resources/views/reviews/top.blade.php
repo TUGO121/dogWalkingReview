@@ -14,6 +14,8 @@
         <!--タイトル-->
         <h1>Let's Dogwalking!!</h1>
         
+        <a href='/reviews/create'>create</a>
+        
          <!--カテゴリー-->
         < <a href="/">Home</a> 
          <div class='category'>

@@ -18,11 +18,23 @@ class ReviewController extends Controller
             ]);
     }
     
-    public function post(Review $review)
+    public function create()
+    {
+        return view('reviews/create');
+    }
+    
+    public function show(Review $review)
     {   
-        return view('reviews/post')->with(['review' => $review]);
+        return view('reviews/show')->with(['review' => $review]);
      
     }
 
+    public function store(Request $request,Review $review)
+    {
+       $input = $request['review'];
+       $input['user_id'] = 1;
+       $review->fill($input)->save(); 
+       return redirect('/reviews/' . $review->id);
+    }
 
 }
