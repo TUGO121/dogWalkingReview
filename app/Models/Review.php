@@ -10,6 +10,14 @@ class Review extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'text',
+        'stars',
+        'user_id',
+        'category_id',
+        'place_id'
+    ];
+    
     public function getByLimit(int $limit_count = 20)
     {
         return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
