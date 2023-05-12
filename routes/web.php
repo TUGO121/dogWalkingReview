@@ -23,9 +23,11 @@ Route::get('/categories/{category}', [CategoryController::class,'top']);
 
 // レビュー作成画面
 Route::get('/reviews/create', [ReviewController::class, 'create']);
-
 Route::post('/reviews',[ReviewController::class,'store']);
 
 // レビュー表示
 Route::get('/reviews/{review}', [ReviewController::class ,'show']);
 
+// レビュー編集
+Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
+Route::put('/reviews/{review}', [ReviewController::class, 'update']);
