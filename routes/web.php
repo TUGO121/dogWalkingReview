@@ -31,3 +31,6 @@ Route::get('/reviews/{review}', [ReviewController::class ,'show']);
 // レビュー編集
 Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
 Route::put('/reviews/{review}', [ReviewController::class, 'update']);
+
+//レビュー削除
+Route::delete('/reviews/{review}',[ReviewController::class,'delete']);
