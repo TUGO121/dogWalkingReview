@@ -37,7 +37,13 @@
                     <p class='text'>{{ $review->text }}</p>
                     <p class='user'>{{ $review->user_id }}</p>
                     <p class='stars'>{{ $review->stars }}</p>
-                </div>
+                    
+                    <form action="/reviews/{{ $review->id }}" id="form_{{ $review->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" onclick="deletePost({{ $review->id }})">delete</button>
+                    </form>
+                </div> 
             @endforeach
             </div>
         </div>
@@ -53,6 +59,15 @@
         たくさんの愛犬家とおすすめの場所を共有していきましょう！！</p>
         
         <!--利用規約、お問い合わせフォームなど-->
-    
+    <script>
+        function deletePost(id) {
+            'use strict'
+            
+            if (confirm('削除すると復元できません。　\n本当に削除しますか？')) {
+                document.getElementById(`form_${id}`).submit();
+            }
+        }
+    </script>
     </body>
+    
 </html>
