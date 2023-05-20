@@ -7,7 +7,7 @@
     <body>
        <form action="/reviews/{{ $review->id }}"method="POST">
            @csrf
-           @method('PUt')
+           @method('PUT')
            <div class='content__title'>
                <h2>場所名</h2>
                <input type='text' 'name='review[place_id] value="{{ $review->place_id}}">

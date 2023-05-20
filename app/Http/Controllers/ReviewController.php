@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Review;
 use App\Models\Category;
+use App\Models\Place;
+use App\Models\User;
 
 class ReviewController extends Controller
 {
-    public function top(Review $review, Category $category)
+    public function top(Review $review, Category $category, Place $place, User $user)
     {
         return view('reviews/top')->with(
             [
                 'reviews' => $review->getByLimit(),
-                'categories' => $category->getByLimit()
+                'categories' => $category->getByLimit(),
+                'places' => $place->getByLimit(),
+                'users' => $user->getByLimit()
                 
             ]);
     }

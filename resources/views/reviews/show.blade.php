@@ -14,6 +14,10 @@
                 <h3>レビュー</h3>
                 <p>{{ $review->text }}</p>    
             </div>
+            <div class="content__stars">
+                <h3>評価</h3>
+                <p>{{ $review->stars }}</p>    
+            </div>
         </div>
         <div class="edit"><a href="/reviews/{{ $review->id }}/edit">edit</a></div>
         <div class="footer">

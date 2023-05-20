@@ -41,4 +41,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+     public function reviews()   
+    {
+        return $this->hasMany(Review::class);  
+    }
+    public function getByLimit(int $limit_count = 20)
+    {
+        return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
+    }
+    
+    public function getByUser(int $limit_count = 5)
+    {
+         return $this->reviews()->with('user')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }

@@ -30,8 +30,8 @@
         <div class='reviews'>
             @foreach ($reviews as $review)
                 <div class='review'>
-                     <p class='category'>{{ $review->category_id }}</p>
-                    <p class='place'>{{ $review->place_id }}</p>
+                     <p class='category'>{{ $review->category->name }}</p>
+                    <p class='place'>{{ $review->place->name }}</p>
                     <p class='text'>{{ $review->text }}</p>
                     <p class='user'>{{ $review->user_id }}</p>
                     <p class='stars'>{{ $review->stars }}</p>
