@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,8 +33,20 @@ Route::middleware('auth')->group(function () {
 });
 
 // ReviewController
-Route::get('/', [ReviewController::class, 'top'])->name('top');
-
+Route::controller(ReviewController::class)->middleware(['auth'])->group(function(){
+    Route::get('/', 'top')->name('top');
+    // レビュー作成画面
+    Route::get('/reviews/create', 'create');
+    Route::post('/reviews','store');
+    // レビュー表示
+    Route::get('/reviews/{review}', 'show');
+    // レビュー編集
+    Route::get('/reviews/{review}/edit', 'edit');
+    Route::put('/reviews/{review}', 'update');
+    
+    //レビュー削除
+    Route::delete('/reviews/{review}',[ReviewController::class,'delete']);
+});
 // CategoryController
 Route::get('/categories/{category}', [CategoryController::class,'top']);
 
@@ -41,19 +55,5 @@ Route::get('/places/{place}', [PlaceController::class,'top']);
 
 // UserController
 Route::get('/users/{user}', [UserController::class,'top']);
-
-// レビュー作成画面
-Route::get('/reviews/create', [ReviewController::class, 'create']);
-Route::post('/reviews',[ReviewController::class,'store']);
-
-// レビュー表示
-Route::get('/reviews/{review}', [ReviewController::class ,'show']);
-
-// レビュー編集
-Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
-Route::put('/reviews/{review}', [ReviewController::class, 'update']);
-
-//レビュー削除
-Route::delete('/reviews/{review}',[ReviewController::class,'delete']);
 
 require __DIR__.'/auth.php';

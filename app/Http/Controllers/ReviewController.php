@@ -22,18 +22,23 @@ class ReviewController extends Controller
             ]);
     }
     
-    public function create()
+    public function create(Category $category, Place $place,)
     {
-        return view('reviews/create');
+        return view('reviews/create')->with(
+            [
+                'categories' => $category->getByLimit(),
+                'places' => $place->getByLimit(),
+                
+            ]);
     }
     
     public function show(Review $review)
-    {   
+    {
         return view('reviews/show')->with(['review' => $review]);
-     
+            
     }
 
-    public function store(Request $request,Review $review)
+    public function store(Request $request,Review $review,Category $category, Place $place, User $user)
     {
        $input = $request['review'];
        $input['user_id'] = 1;
