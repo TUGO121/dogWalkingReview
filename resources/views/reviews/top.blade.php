@@ -1,10 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <h1>Let's Dogwalking!!</h1>
+        <p>ユーザー名：{{ Auth::user()->name }}</p>
     </x-slot>
-     <!--タイトル-->
-        
-        <a href='/reviews/create'>create</a>
         
          <!--カテゴリー-->
         <a href="/">Home</a> 
@@ -13,6 +11,8 @@
                 <a href="/categories/{{$category->id}}">{{ $category->name }}</a>
             @endforeach
         </div>
+        <!--投稿ページ-->
+        <a href='/reviews/create'>create</a>
         
         <!--写真-->
         

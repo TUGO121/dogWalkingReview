@@ -15,4 +15,12 @@ class PlaceController extends Controller
                 'places' => $place->getByLimit()
             ]);
     }
+    public function create(Place $place)
+    {
+        return view('places.create')->with(
+            [
+                'reviews' => $place->getByPlace(),
+                'places' => $place->getByLimit()
+            ]);
+    }
 }

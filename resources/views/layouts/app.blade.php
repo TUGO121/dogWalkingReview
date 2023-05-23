@@ -19,7 +19,7 @@
             .rating {
               unicode-bidi: bidi-override;
               direction: rtl;
-              text-align: center;
+              text-align: left;
             }
             .rating > input {
               display: none;
@@ -42,8 +42,8 @@
             .rating > input:checked ~ label:before {
               opacity: 1;
             }
-            .rating > label:hover:before,
-            .rating > label:hover ~ label:before {
+            .rating > .edit-rating:hover:before,
+            .rating > .edit-rating:hover ~ .edit-rating:before {
               opacity: 1;
             }
          </style>
