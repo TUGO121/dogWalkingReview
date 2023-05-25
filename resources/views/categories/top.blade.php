@@ -21,7 +21,18 @@
                     <p class='place'>{{ $review->place->name }}</p>
                     <a href="/reviews/{{ $review->id }}">{{ $review->text }}</a>
                     <p class='user'>{{ $review->user->name }}</p>
-                    <p class='stars'>{{ $review->stars }}</p>
+                    <div class="rating">
+                    <input type="radio" id="star5" class="hidden" disabled {{ $review->stars===5? "checked" : ""}}/>
+                    <label for="star5" class="text-2xl cursor-pointer">&#x2606;</label>
+                    <input type="radio" id="star4" class="hidden" disabled {{ $review->stars===4? "checked" : ""}}/>
+                    <label for="star4" class="text-2xl cursor-pointer">&#x2606;</label>
+                    <input type="radio" id="star3" class="hidden" disabled {{ $review->stars===3? "checked" : ""}} />
+                    <label for="star3" class="text-2xl cursor-pointer">&#x2606;</label>
+                    <input type="radio" id="star2" class="hidden" disabled {{ $review->stars===2? "checked" : ""}}/>
+                    <label for="star2" class="text-2xl cursor-pointer">&#x2606;</label>
+                    <input type="radio" id="star1" class="hidden" disabled {{ $review->stars===1? "checked" : ""}}/>
+                    <label for="star1" class="text-2xl cursor-pointer">&#x2606;</label>
+                </div>
                 </div>
             @endforeach
             </div>
