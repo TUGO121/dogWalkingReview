@@ -5,7 +5,6 @@
     </x-slot>
         
          <!--カテゴリー-->
-        <a href="/">Home</a> 
         <div class='category'>
             @foreach ($categories as $category)
                      <a href="/categories/{{$category->id}}">{{ $category->name }}</a>
