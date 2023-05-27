@@ -16,6 +16,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
         <style>
+        
+            .review {
+                margin-top:50px;
+            }
             .rating {
               unicode-bidi: bidi-override;
               direction: rtl;

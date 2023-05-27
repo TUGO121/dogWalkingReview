@@ -5,7 +5,6 @@
     </x-slot>
         
          <!--カテゴリー-->
-        <a href="/">Home</a> 
         <div class='category'>
             @foreach ($categories as $category)
                 <a href="/categories/{{$category->id}}">{{ $category->name }}</a>
@@ -54,7 +53,6 @@
         そんな大好きな犬とのお出かけを通してたくさんの人たちとつながることができたらうれしいと思い、このサイトを作りました！！<br>
         たくさんの愛犬家とおすすめの場所を共有していきましょう！！</p>
         
-        <!--利用規約、お問い合わせフォームなど-->
     <script>
         function deletePost(id) {
             'use strict'
