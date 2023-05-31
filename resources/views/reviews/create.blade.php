@@ -58,5 +58,4 @@
                     <img src="{{ asset('img/IMG_3607.jpg') }}" alt="">
             </div>
         </div>
-        
 </x-app-layout>
