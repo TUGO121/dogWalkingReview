@@ -5,7 +5,7 @@
     </x-slot>
         
          <!--カテゴリー-->
-        <div class='category'>
+        <div class='categories'>
             @foreach ($categories as $category)
                      <a href="/categories/{{$category->id}}">{{ $category->name }}</a>
                
@@ -14,11 +14,12 @@
         </div>
         <!--投稿一覧-->
         <div class='reviews'>
+            <div class="review-list">
             @foreach ($reviews as $review)
                 <div class='review'>
                      <p class='category'>{{ $review->category->name }}</p>
-                    <p class='place'>{{ $review->place->name }}</p>
-                    <a href="/reviews/{{ $review->id }}">{{ $review->text }}</a>
+                    <a href="/reviews/{{ $review->id }}">{{ $review->place->name }}</a>
+                    <p class="/reviews/{{ $review->id }}">{{ $review->text }}</p>
                     <p class='user'>{{ $review->user->name }}</p>
                     <div class="rating">
                     <input type="radio" id="star5" class="hidden" disabled {{ $review->stars===5? "checked" : ""}}/>
@@ -34,6 +35,9 @@
                 </div>
                 </div>
             @endforeach
+            </div>
+            <div class="img-container">
+                <img src="{{ asset('img/IMG_3607.jpg') }}" alt="">
             </div>
         </div>
        

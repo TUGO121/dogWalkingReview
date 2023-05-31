@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 Route::controller(ReviewController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'top')->name('top');
     // レビュー作成画面
-    Route::get('/reviews/create', 'create');
+    Route::get('/reviews/create', 'create')->name('create');
     Route::post('/reviews','store');
     // レビュー表示
     Route::get('/reviews/{review}', 'show');

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Dog walking reviview!!') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -16,9 +16,29 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
         <style>
-        
+            
+            .categories {
+                text-align: center;
+            }
+            
+            .reviews {
+                display: flex;
+            }
+            
+            .img-container {
+                flex: 0 0 auto;
+            }
+            
+            .review-list {
+                text-align:left;
+                display: flex;
+                flex-wrap: wrap;
+                gap:100px,100px;
+            }
+            
             .review {
                 margin-top:50px;
+                flex: 0 0 100%;
             }
             .rating {
               unicode-bidi: bidi-override;
@@ -50,6 +70,12 @@
             .rating > .edit-rating:hover ~ .edit-rating:before {
               opacity: 1;
             }
+            
+            body {
+                background-color: ;
+            }
+            
+            
          </style>
   
     </head>

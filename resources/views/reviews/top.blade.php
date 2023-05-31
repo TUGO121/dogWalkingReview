@@ -5,23 +5,23 @@
     </x-slot>
         
          <!--カテゴリー-->
-        <div class='category'>
+        <div class='categories'>
+            <h1>カテゴリー</h1>
             @foreach ($categories as $category)
                 <a href="/categories/{{$category->id}}">{{ $category->name }}</a>
             @endforeach
         </div>
-        <!--投稿ページ-->
-        <a href='/reviews/create'>create</a>
         
         <!--写真-->
         
         <!--投稿一覧-->
         <div class='reviews'>
+                <div class="review-list">
             @foreach ($reviews as $review)
-                <div class='review'>
-                     <p class='category'>{{ $review->category->name }}</p>
-                    <p class='place'>{{ $review->place->name }}</p>
-                    <a href="/reviews/{{ $review->id }}">{{ $review->text }}</a>
+                    <div class="review">
+                    <p class='category'>{{ $review->category->name }}</p>
+                    <a href="/reviews/{{ $review->id }}">{{ $review->place->name}}</a>
+                    <p class="/reviews/{{ $review->id }}">{{ $review->text }}</p>
                     <p class='user'>{{ $review->user->name }}</p>
                     
                     <div class="rating">
@@ -45,10 +45,13 @@
                 </div> 
             @endforeach
             </div>
+             <div class="img-container">
+                <img src="{{ asset('img/IMG_3607.jpg') }}" alt="">
+            </div>
         </div>
         
         <!--あいさつ文-->
-        <p>皆さんはじめまして！！サイト作成者の○○です＾＾<br>
+        <p>皆さんはじめまして！！<br>
         私は愛犬とのお出かけが大好きです。<br>
         そんな大好きな犬とのお出かけを通してたくさんの人たちとつながることができたらうれしいと思い、このサイトを作りました！！<br>
         たくさんの愛犬家とおすすめの場所を共有していきましょう！！</p>

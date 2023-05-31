@@ -14,7 +14,7 @@ class ReviewController extends Controller
     {
         return view('reviews/top')->with(
             [
-                'reviews' => $review->getByLimit(10),
+                'reviews' => $review->getByLimit(4),
                 'categories' => $category->getByLimit(),
                 'places' => $place->getByLimit(),
                 'users' => $user->getByLimit()
