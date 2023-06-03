@@ -72,7 +72,12 @@
             }
             
             body {
-                background-color: ;
+                background-color: brown;
+            }
+            
+            a {
+                color: blue;
+                text-decoration: underline;
             }
             
             
